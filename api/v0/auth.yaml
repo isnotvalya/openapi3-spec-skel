@@ -1,0 +1,19 @@
+authTokenApi:
+  post:
+    summary: "Получить токен авторизации"
+    tags:
+      - auth-api
+    requestBody:
+      description: ""
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "../../schemas/api/v0/auth/request.yaml#/AuthTokenRequest"
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              $ref: "../../schemas/api/v0/auth/response.yaml#/AuthTokenResponse"

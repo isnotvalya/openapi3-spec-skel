@@ -1,0 +1,15 @@
+AuthTokenResponse:
+  type: object
+  properties:
+    token_type:
+      type: string
+      enum: [Bearer]
+    access_token:
+      type: string
+      example: F9TZPIBJPBI53JNNMKY5EG
+    refresh_token:
+      type: string
+      example: TLUYVR4NVPYRI30BC0I3LQ
+    expires_in:
+      type: number
+      example: 7200

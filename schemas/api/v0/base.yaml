@@ -1,0 +1,16 @@
+uuid:
+  type: string
+  format: uuid
+  example: "cc6c7cfe-6a3d-4731-a69f-b53b0e9285ad"
+
+passwordField:
+  type: string
+  minLength: 8
+  maxLength: 20
+  description: "Допустимы символы [a-zA-Z0-9_-]"
+
+unixStampField:
+  type: number
+  format: int64
+  minimum: 0
+  maximum: 2147483647

@@ -1,0 +1,21 @@
+openapi: 3.0.0
+
+info:
+  title: API
+  version: 0.0.1
+  description: >
+    Api-сервиса
+
+servers:
+  - url: http://127.0.0.1:8080/
+    description: Local server
+
+tags:
+  - name: auth-api
+    description: Сервис авторизации
+  - name: statistics-api
+    description: Сервис статистики
+
+paths:
+  /auth/token/:
+    $ref: ./api/v0/auth.yaml#/authTokenApi

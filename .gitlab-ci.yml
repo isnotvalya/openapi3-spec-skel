@@ -1,0 +1,16 @@
+stages:
+  - build
+
+build:
+  stage: build
+  image: pensioner/redoc-cli:0.9.6
+  script:
+    - DT_NOW="$(date +%Y.%m.%d)"
+    - VERSION="${CI_COMMIT_REF_SLUG}::${DT_NOW}"
+    - redoc-cli bundle --title "Private API (${VERSION})" -t templates/main.hbs -o out.html index.yaml
+  artifacts:
+    paths:
+    - out.html
+    expire_in: 6 month
+  only:
+    - /^\d+\.\d+\.\d+$/

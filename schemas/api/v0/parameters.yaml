@@ -1,0 +1,30 @@
+userId:
+  name: user-id
+  in: path
+  required: true
+  description: "Уникальный ID пользователя"
+  schema:
+    $ref: "./base.yaml#/uuid"
+
+limit:
+  name: limit
+  in: query
+  required: false
+  description: "Максимальное количество элементов в ответе"
+  schema:
+    type: integer
+    format: int64
+    minimum: 1
+    maximum: 100
+    default: 50
+
+offset:
+  name: offset
+  in: query
+  required: false
+  description: "Количество пропускаемых с начала результата"
+  schema:
+    type: integer
+    format: int64
+    minimum: 0
+    default: 0

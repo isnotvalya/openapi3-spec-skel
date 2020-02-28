@@ -1,0 +1,10 @@
+# docker build -t pensioner/redoc-cli:0.9.6 -t pensioner/redoc-cli:latest -f Dockerfile.redoc-cli .
+
+FROM        node:lts-alpine
+
+RUN         npm install -g redoc-cli@0.9.6
+
+WORKDIR     /data
+EXPOSE      8080
+
+ENTRYPOINT  ["redoc-cli"]
